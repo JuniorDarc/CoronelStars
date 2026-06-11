@@ -8,17 +8,20 @@
 body{
 
     background-image:url("imagens/fundo-kfc.png");
-
     background-repeat:repeat;
-
-   background-size:700px;
-
-    background-attachment:fixed;
-
+    background-size:700px;
+    background-attachment:scroll;
     min-height:100vh;
- 
 }
 
+@media(min-width:1000px){
+
+    body{
+
+        background-attachment:fixed;
+    }
+
+}
 
 /* HEADER */
 
@@ -793,6 +796,252 @@ header{
     .modal-buttons{
 
         flex-direction:column;
+    }
+
+}
+
+/* =================================
+   MOBILE - TABLETS
+================================= */
+
+@media (max-width: 900px){
+
+    header{
+
+        flex-wrap:wrap;
+
+        height:auto;
+
+        min-height:80px;
+
+        padding:15px;
+    }
+
+    .logo-title{
+
+        position:static;
+
+        transform:none;
+
+        width:100%;
+
+        text-align:center;
+
+        justify-content:center;
+
+        margin:10px 0;
+
+        font-size:1.8rem;
+    }
+
+    .kfc-stripes{
+
+        display:none;
+    }
+
+    #pdfBtn{
+
+        width:100%;
+
+        margin-top:10px;
+    }
+
+    .perfil-container{
+
+        margin:auto;
+    }
+
+}
+
+/* =================================
+   CELULAR
+================================= */
+
+@media (max-width: 600px){
+
+    body{
+
+        background-size:250px;
+
+        background-attachment:scroll;
+    }
+
+    header{
+
+        flex-direction:column;
+
+        gap:10px;
+    }
+
+    .perfil-img{
+
+        width:50px;
+
+        height:50px;
+    }
+
+    .logo-title{
+
+        font-size:1.5rem;
+
+        white-space:normal;
+
+        text-align:center;
+    }
+
+    #pdfBtn{
+
+        width:100%;
+
+        padding:12px;
+    }
+
+    .dashboard{
+
+        flex-direction:column;
+    }
+
+    .left-panel,
+    .right-panel{
+
+        width:100%;
+
+        padding:10px;
+    }
+
+    .cadastro{
+
+        padding:10px;
+    }
+
+    .cadastro input,
+    .cadastro select,
+    #addFuncionario{
+
+        width:100%;
+    }
+
+    .funcionario{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:10px;
+    }
+
+    .acoes{
+
+        width:100%;
+
+        justify-content:flex-end;
+    }
+
+    .grafico-card{
+
+        padding:15px;
+    }
+
+    #grafico{
+
+        width:100% !important;
+
+        height:auto !important;
+    }
+
+    .funcionario-mes{
+
+        padding:15px;
+    }
+
+    #funcMes{
+
+        font-size:1.2rem;
+    }
+
+}
+
+/* =================================
+   MODAL MOBILE
+================================= */
+
+@media (max-width: 768px){
+
+    .modal-content{
+
+        width:95%;
+
+        height:90vh;
+
+        overflow-y:auto;
+
+        flex-direction:column;
+    }
+
+    .modal-left{
+
+        padding:15px;
+    }
+
+    .modal-right{
+
+        width:100%;
+
+        border-left:none;
+
+        border-top:2px solid #eee;
+
+        padding:15px;
+    }
+
+    #historicoLista{
+
+        max-height:250px;
+    }
+
+    .modal-buttons{
+
+        flex-direction:column;
+    }
+
+    #salvar,
+    #fechar,
+    #pdfIndividual{
+
+        width:100%;
+    }
+
+}
+
+/* =================================
+   TELAS MUITO PEQUENAS
+================================= */
+
+@media (max-width: 400px){
+
+    .logo-title{
+
+        font-size:1.2rem;
+    }
+
+    .tab{
+
+        font-size:.9rem;
+    }
+
+    .history-tab{
+
+        font-size:.8rem;
+    }
+
+    .nome{
+
+        font-size:1rem;
+    }
+
+    #funcMes{
+
+        font-size:1rem;
     }
 
 }
