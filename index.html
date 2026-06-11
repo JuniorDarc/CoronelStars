@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coronel Stars</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="perfil-container">
+
+    <img
+        src="imagens/logo-kfc.png"
+        alt="Logo"
+        class="perfil-img"
+    >
+
+</div>
+
+    <h1 class="logo-title">
+        ⭐ Coronel Stars ⭐
+    </h1>
+
+      <div class="kfc-stripes">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+
+    <button id="pdfBtn">
+        Gerar Relatório PDF
+    </button>
+
+</header>
+
+<div class="dashboard">
+
+    <!-- PAINEL ESQUERDO -->
+
+    <section class="left-panel">
+
+        <div class="cadastro">
+
+            <input
+                type="text"
+                id="novoFuncionario"
+                placeholder="Nome do Funcionário"
+            >
+
+            <select id="horarioFuncionario">
+
+                <option value="abertura">
+                    🌅 Abertura
+                </option>
+
+                <option value="intermedio">
+                    ☀️ Intermediário
+                </option>
+
+                <option value="fechamento">
+                    🌙 Fechamento
+                </option>
+
+            </select>
+
+            <button id="addFuncionario">
+                Adicionar
+            </button>
+
+        </div>
+
+        <!-- ABAS -->
+
+        <div class="tabs">
+
+            <button
+                class="tab active"
+                data-tab="abertura">
+
+                🌅 Abertura
+
+            </button>
+
+            <button
+                class="tab"
+                data-tab="intermedio">
+
+                ☀️ Intermediário
+
+            </button>
+
+            <button
+                class="tab"
+                data-tab="fechamento">
+
+                🌙 Fechamento
+
+            </button>
+
+        </div>
+
+        <!-- LISTA -->
+
+        <div id="funcionarios">
+
+        </div>
+
+    </section>
+
+    <!-- PAINEL DIREITO -->
+
+    <section class="right-panel">
+
+        <div class="grafico-card">
+
+            <h2>
+                Ranking Mensal
+            </h2>
+
+            <canvas id="grafico"></canvas>
+
+        </div>
+
+        <button id="calcularMes">
+
+            Calcular Funcionário do Mês
+
+        </button>
+
+        <div class="funcionario-mes">
+
+            <h2>
+                🏆 Funcionário do Mês
+            </h2>
+
+            <h3 id="funcMes">
+
+                Nenhum
+
+            </h3>
+
+            <p id="pontosMes">
+
+                Aguardando cálculo
+
+            </p>
+
+        </div>
+
+        <button id="resetarMes">
+
+            Resetar Mês
+
+        </button>
+
+    </section>
+
+</div>
+
+<!-- MODAL -->
+
+<div id="modal">
+
+    <div class="modal-content">
+
+        <!-- LADO ESQUERDO -->
+
+        <div class="modal-left">
+
+            <h2 id="nomeFuncionario">
+
+                Funcionário
+
+            </h2>
+
+            <label>
+
+                Tipo de Avaliação
+
+            </label>
+
+            <select id="tipo">
+
+                <option value="positivo">
+
+                    Positiva (+1)
+
+                </option>
+
+                <option value="negativo">
+
+                    Negativa (-0.5)
+
+                </option>
+
+            </select>
+
+            <label>
+
+                Descrição
+
+            </label>
+
+            <textarea
+                id="descricao"
+                placeholder="Digite o feedback">
+            </textarea>
+
+            <label>
+
+                Avaliado por
+
+            </label>
+
+            <input
+                type="text"
+                id="avaliador"
+                placeholder="Nome do avaliador"
+            >
+
+    <div class="modal-buttons">
+
+    <button id="salvar">
+        Salvar
+    </button>
+
+    <button id="pdfIndividual">
+        PDF Individual
+    </button>
+
+    <button id="fechar">
+        Fechar
+    </button>
+
+</div>
+
+        </div>
+
+        <!-- LADO DIREITO -->
+
+        <div class="modal-right">
+
+            <h3>
+                Histórico
+            </h3>
+
+            <div class="history-tabs">
+
+                <button
+                    class="history-tab active"
+                    data-history="positivo">
+
+                    ✅ Positivos
+
+                </button>
+
+                <button
+                    class="history-tab"
+                    data-history="negativo">
+
+                    ❌ Negativos
+
+                </button>
+
+            </div>
+
+            <div id="historicoLista">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>

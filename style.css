@@ -1,0 +1,798 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+    background-image:url("imagens/fundo-kfc.png");
+
+    background-repeat:repeat;
+
+   background-size:700px;
+
+    background-attachment:fixed;
+
+    min-height:100vh;
+ 
+}
+
+
+/* HEADER */
+
+header{
+
+    height:80px;
+
+    background:#fff;
+
+    border-bottom:4px solid #e4002b;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 25px;
+
+    position:relative;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.5);
+}
+
+.logo-title{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-family:"Ink Free",cursive;
+
+    font-size:2.4rem;
+
+    color:#e4002b;
+
+    font-weight:bold;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    white-space:nowrap;
+}
+
+.perfil-container{
+
+    width:60px;
+    height:60px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+}
+
+.perfil-img{
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid #e4002b;
+
+    background:white;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+}
+
+#pdfBtn{
+    background:#111;
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+#pdfBtn:hover{
+    background:#333;
+}
+
+/* DASHBOARD */
+
+.dashboard{
+    display:flex;
+    height:calc(100vh - 80px);
+}
+
+/* PAINEL ESQUERDO */
+
+.left-panel{
+    width:55%;
+    padding:20px;
+
+    display:flex;
+    flex-direction:column;
+}
+
+/* CADASTRO */
+
+.cadastro{
+    display:flex;
+    gap:10px;
+     box-shadow:0 4px 10px rgba(0,0,0,0.5);
+    margin-bottom:20px;
+
+}
+
+/* LISTRAS KFC */
+
+.kfc-stripes{
+
+    position:absolute;
+
+    right:220px;
+
+    display:flex;
+
+    gap:8px;
+
+    height:80px;
+}
+
+.kfc-stripes span{
+
+    width:25px;
+
+    height:100%;
+
+    background:#e4002b;
+
+    border-radius:4px;
+}
+
+
+.cadastro input,
+.cadastro select{
+
+    padding:12px;
+
+    border:2px solid #ddd;
+
+    border-radius:12px;
+
+    font-size:1rem;
+}
+
+.cadastro input{
+    flex:1;
+}
+
+.cadastro select{
+    width:180px;
+}
+
+#addFuncionario{
+
+    background:#e4002b;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+#addFuncionario:hover{
+    background:#c40025;
+}
+
+/* ABAS */
+
+.tabs{
+    display:flex;
+    gap:10px;
+
+    margin-bottom:15px;
+}
+
+.tab{
+
+    flex:1;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#ddd;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:.2s;
+}
+
+.tab.active{
+    background:#e4002b;
+    color:white;
+}
+
+/* LISTA */
+
+#funcionarios{
+
+    flex:1;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:15px;
+
+    overflow-y:auto;
+
+    box-shadow:0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* CARD */
+
+.funcionario{
+
+    background:#fafafa;
+
+    border-left:6px solid #e4002b;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    margin-bottom:12px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:0 4px 8px rgba(0,0,0,0.5);
+}
+
+.info{
+    flex:1;
+}
+
+.nome{
+
+    font-weight:700;
+     font-family:"Ink Free",cursive;
+
+    margin-bottom:8px;
+
+    color:#222;
+}
+
+.pontos{
+
+    color:#555;
+
+    margin-top:8px;
+}
+
+/* BARRA */
+
+.progress{
+
+    width:100%;
+
+    height:16px;
+
+    background:#ddd;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.fill{
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #e4002b,
+        #ff5577
+    );
+
+    transition:.3s;
+}
+
+/* AÇÕES */
+
+.acoes{
+    display:flex;
+    gap:8px;
+}
+
+.detalhes,
+.remover{
+
+    width:42px;
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    transition:.2s;
+}
+
+.detalhes{
+    background:#111;
+    color:white;
+}
+
+.detalhes:hover{
+    background:#333;
+}
+
+.remover{
+    background:#e4002b;
+    color:white;
+}
+
+.remover:hover{
+    background:#c40025;
+}
+
+/* PAINEL DIREITO */
+
+.right-panel{
+
+    width:45%;
+
+    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+}
+
+/* GRÁFICO */
+
+.grafico-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,0.5);
+}
+
+.grafico-card h2{
+
+    margin-bottom:15px;
+
+    color:#e4002b;
+}
+
+#grafico{
+    max-height:280px;
+}
+
+/* CALCULAR */
+
+#calcularMes{
+
+    background:#e4002b;
+
+    color:white;
+
+    border:none;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    font-size:1rem;
+}
+
+#calcularMes:hover{
+
+    background:#c40025;
+}
+
+/* FUNCIONÁRIO DO MÊS */
+
+.funcionario-mes{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:0 4px 15px rgba(0,0,0,0.5);
+}
+
+.funcionario-mes h2{
+
+    color:#e4002b;
+
+    margin-bottom:15px;
+}
+
+#funcMes{
+
+    font-size:1.5rem;
+
+    margin-bottom:10px;
+}
+
+#pontosMes{
+
+    color:#666;
+}
+
+/* RESET */
+
+#resetarMes{
+
+    background:#111;
+
+    color:white;
+
+    border:none;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+#resetarMes:hover{
+
+    background:#333;
+}
+
+/* MODAL */
+
+#modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+}
+
+#modal.show{
+    display:flex;
+}
+
+/* CONTEÚDO */
+
+.modal-content{
+
+    width:1000px;
+
+    max-width:95%;
+
+    background:white;
+
+    border-radius:20px;
+
+    display:flex;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 35px rgba(0,0,0,0.5);
+}
+
+/* ESQUERDA */
+
+.modal-left{
+
+    flex:1;
+
+    padding:25px;
+}
+
+.modal-left h2{
+
+    color:#e4002b;
+
+    margin-bottom:20px;
+
+    text-align:center;
+}
+
+.modal-left label{
+
+    display:block;
+
+    margin-bottom:5px;
+
+    font-weight:600;
+}
+
+.modal-left select,
+.modal-left textarea,
+.modal-left input{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:15px;
+
+    border:2px solid #ddd;
+
+    border-radius:12px;
+
+    font-size:1rem;
+}
+
+.modal-left textarea{
+
+    resize:none;
+
+    height:120px;
+}
+
+/* BOTÕES MODAL */
+
+.modal-buttons{
+
+    display:flex;
+
+    gap:10px;
+}
+
+#salvar,
+#fechar,
+#pdfIndividual{
+
+    flex:1;
+
+    border:none;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+#salvar{
+
+    background:#e4002b;
+
+    color:white;
+}
+
+#salvar:hover{
+
+    background:#c40025;
+}
+
+#fechar{
+
+    background:#111;
+
+    color:white;
+}
+
+#fechar:hover{
+
+    background:#333;
+}
+
+/* DIREITA */
+
+.modal-right{
+
+    width:380px;
+
+    border-left:2px solid #eee;
+
+    padding:25px;
+
+    background:#fafafa;
+}
+
+.modal-right h3{
+
+    color:#e4002b;
+
+    margin-bottom:15px;
+}
+
+/* ABAS HISTÓRICO */
+
+.history-tabs{
+
+    display:flex;
+
+    gap:8px;
+
+    margin-bottom:15px;
+}
+
+.history-tab{
+
+    flex:1;
+
+    border:none;
+
+    padding:10px;
+
+    border-radius:10px;
+
+    background:#ddd;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+.history-tab.active{
+
+    background:#e4002b;
+
+    color:white;
+}
+
+/* HISTÓRICO */
+
+#historicoLista{
+
+    max-height:500px;
+
+    overflow-y:auto;
+}
+
+.feedback-item{
+
+    padding:12px;
+
+    border-radius:10px;
+
+    margin-bottom:10px;
+
+    background:white;
+
+    box-shadow:0 4px 6px rgba(0,0,0,0.5);
+}
+
+.feedback-item.positivo{
+
+    border-left:5px solid #00a650;
+}
+
+.feedback-item.negativo{
+
+    border-left:5px solid #e4002b;
+}
+
+.feedback-item strong{
+
+    display:block;
+
+    margin-bottom:5px;
+}
+
+.feedback-item p{
+
+    margin-bottom:5px;
+
+    color:#444;
+}
+
+.feedback-item small{
+
+    color:#777;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:1100px){
+
+    .dashboard{
+
+        flex-direction:column;
+
+        height:auto;
+    }
+
+    .left-panel,
+    .right-panel{
+
+        width:100%;
+    }
+
+    .modal-content{
+
+        flex-direction:column;
+    }
+
+    .modal-right{
+
+        width:100%;
+
+        border-left:none;
+
+        border-top:2px solid #eee;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .cadastro{
+
+        flex-direction:column;
+    }
+
+    .tabs{
+
+        flex-direction:column;
+    }
+
+    .modal-buttons{
+
+        flex-direction:column;
+    }
+
+}
